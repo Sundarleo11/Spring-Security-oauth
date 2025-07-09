@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EasybankController {
 
     @GetMapping("/sayHello")
-    public String welcome(){
+    public String welcome() {
         return "Hello welcome to spring boot world";
     }
 }
