@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NoticesController {
 
-    @GetMapping("/getNotices")
+    @GetMapping("/notices")
     public String welcome() {
         return "Hello welcome to spring boot world";
     }

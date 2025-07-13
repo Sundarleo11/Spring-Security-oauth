@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BalanceController {
 
-    @GetMapping("/getBalance")
+    @GetMapping("/myBalance")
     public String welcome() {
         return "Hello welcome to spring boot world";
     }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AccountsController {
 
-    @GetMapping("/getAccounts")
+    @GetMapping("/myAccount")
     public String welcome() {
         return "Hello welcome to spring boot world";
     }

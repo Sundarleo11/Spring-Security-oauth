@@ -14,33 +14,19 @@ import org.springframework.security.web.authentication.password.HaveIBeenPwnedRe
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-@Profile("!prod")
-public class Security {
+@Profile("prod")
+public class ProjectSecurityProdConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-
-        /*http.authorizeHttpRequests((requests) -> requests.anyRequest().permitAll());*/
-        /*http.authorizeHttpRequests((requests) -> requests.anyRequest().denyAll());*/
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
-                        .requestMatchers("/notices", "/contact", "/error", "/register").permitAll());
+                .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
+                .requestMatchers("/notices", "/contact", "/error", "/register").permitAll());
         http.formLogin(withDefaults());
         http.httpBasic(withDefaults());
         return http.build();
     }
-
-
-    /*@Bean
-    public UserDetailsService userDetailsService(DataSource dataSource) {
-        /*UserDetails user = User.withUsername("user").password("{noop}EazyBytes@12345").authorities("read").build();
-        UserDetails admin = User.withUsername("admin")
-                .password("{bcrypt}$2a$12$gKOLfwU8LGIUZFuNCDVe3OH07RCd2hfAZyWX/tQucsmnrkq7d5bNe")//12345
-                .authorities("admin").build();
-
-        return new JdbcUserDetailsManager(dataSource);
-    }*/
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -49,7 +35,6 @@ public class Security {
 
     /**
      * From Spring Security 6.3 version
-     *
      * @return
      */
     @Bean
