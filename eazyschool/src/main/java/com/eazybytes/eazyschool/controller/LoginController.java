@@ -13,10 +13,13 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = {RequestMethod.GET})
     public String displayLoginPage(@RequestParam(value = "error", required = false) String error,
-                                  Model model) {
+                                   @RequestParam(value = "logout", required = false) String logout, Model model) {
         String errorMessge = null;
         if(null != error) {
             errorMessge = "Username or Password is incorrect !!";
+        }
+        if(null!= logout) {
+            errorMessge = "You have been successfully logged out !!";
         }
         model.addAttribute("errorMessge", errorMessge);
         return "login.html";
