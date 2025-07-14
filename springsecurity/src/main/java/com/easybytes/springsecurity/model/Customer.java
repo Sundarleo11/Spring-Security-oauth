@@ -1,6 +1,5 @@
 package com.easybytes.springsecurity.model;
 
-import com.easybytes.springsecurity.model.Authority;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
