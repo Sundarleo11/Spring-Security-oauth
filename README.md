@@ -37,6 +37,7 @@
 - Angular Keycloak library - https://www.npmjs.com/package/keycloak-angular
 - Keycloak official documentation - https://www.keycloak.org/documentation
 - Keycloak Admin REST APIs - https://www.keycloak.org/docs-api/latest/rest-api/index.html
+- Author reference :https://github.com/eazybytes/spring-security/blob/3.3.0/README.md
 
 ## Commands used in the course
 
